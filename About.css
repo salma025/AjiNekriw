@@ -1,0 +1,710 @@
+/* Réinitialisation des styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+/* ======= Header ======= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: none;
+}
+
+.logo-ajinekriw img {
+    width: 216px;
+    height: 100px;
+}
+
+/* ======= Navigation Bar ======= */
+.nav-link1 {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    font-size: 18px;
+    color: #6a106a;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #cf9a38;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    font-size: 20px;
+    background-color: #6a106a;
+    color: #cf9a38;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/*texte*/
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/*heading*/
+.heading {
+    text-transform: uppercase;
+    position: relative;
+    background: none;
+    background-color: #cf9a38;
+    padding: 0px 20px;
+    gap: 1rem;
+    color: #6a106a;
+    margin-top: 00px;
+}
+/**/
+.heading::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 5px;
+    background-color: #6a106a;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.heading:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/**/
+.heading:hover {
+    font-size: 23px; 
+    color: #cf9a38;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.1); 
+}
+.heading h1 {
+    text-align: center;
+    overflow: hidden;
+    color: #6a106a;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font: 20px/0px 'Roboto', sans-serif;
+    padding: 20px 0;;
+}
+.heading h1:before,
+.heading h1:after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+  border-bottom: 1px solid;
+  height: 0;
+  vertical-align: middle;
+  color: #6a106a;
+}
+.heading h1:before {
+  margin-left: -100%;
+  margin-right: 80px;
+}
+.heading h1:after {
+  margin-left: 80px;
+  margin-right: -100%;
+}
+
+section {
+    padding-top: 0;
+}
+
+/*revolution*/
+
+.revolution {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    margin: 50px;
+    margin-bottom: 0; 
+    margin-top:-20px;
+}
+
+.rvl-text {
+    flex: 1;
+    max-width: 650px;
+}
+
+.revolution h1 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px; /* Espace entre h1 et p */
+    text-align: left;
+    color: #cf9a38; 
+}
+
+.revolution p {
+    font-family: 'Pacifico', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #555; 
+}
+
+.revolution img {
+    width: 40%;
+    max-width: 500px;
+    height: auto;
+}
+
+
+/*histoir*/
+.histoir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 30px;
+    margin: 50px;
+    margin-top: -100px; 
+    margin-bottom: 0;
+}
+
+.htr-text {
+    flex: 1;
+    max-width: 650px;
+}
+
+.histoir h1 {
+    font-family: Georgia, serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px; 
+    text-align: left;
+    color: #cf9a38;
+}
+
+.histoir p {
+    font-family: 'Pacifico', cursive;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #555; 
+}
+
+.histoir img {
+    width: 40%;
+    max-width: 500px;
+    height: auto;
+}
+
+
+/*mission.vission*/
+.mission-vision {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    gap: 20px;
+    padding: 0px;
+    background-color: none; 
+    margin-top: -170px;
+}
+
+
+.mission, .vision {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 20px;
+    width: 45%; 
+    height: 400px; 
+}
+
+
+/*mission*/
+.mission {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: none; 
+}
+
+.msn-text {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+}
+
+/* Style du titre */
+.msn-text h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #cf9a38;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #cf9a38; 
+    padding-bottom: 10px;
+}
+
+/* Style du paragraphe */
+.msn-text p {
+    font-size: 16px;
+    color: #333; 
+    line-height: 1.6;
+    font-family: 'Pacifico', cursive;
+}
+/*vission*/
+
+.vision {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: none; 
+    
+}
+
+
+.vsn-text {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px; 
+}
+
+
+.vsn-text h3 {
+    font-family: Georgia, serif;
+    font-size: 24px;
+    color: #cf9a38; 
+    margin-bottom: 15px;
+    border-bottom: 3px solid #cf9a38; 
+    padding-bottom: 10px;
+}
+
+
+.vsn-text p {
+    font-size: 16px;
+    color: #333; 
+    line-height: 1.6;
+    font-family: 'Pacifico', cursive;
+}
+.mission h2 {
+    font-family: Georgia, serif;
+    color: #cf9a38;
+} 
+.vision h2 {
+    font-family: Georgia, serif;
+    color: #cf9a38;
+}
+
+
+/*FONDEMENTS */
+.fondament {
+    background: none;
+    padding: 0px;
+    max-width: 900px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: -120px;
+}
+
+.fondament h4 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Georgia', serif;
+    color: #cf9a38;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Ajout d'une ligne sous le titre */
+.fondament h4::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 4px;
+    background: #cf9a38;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+/* Style de la liste */
+.fondament ul {
+    list-style: none;
+    padding: 0;
+}
+
+.fondament ul li {
+    font-family: 'Pacifico', cursive;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    padding: 12px 15px;
+    border-radius: 70px;
+    margin: 10px 0;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet hover */
+.fondament ul li:hover {
+    background: #cf9a38;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*footer*/
+.footer {
+    background-color:#cf9a38;
+    padding: 70px 0px;
+    color: #6a106a;
+    
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 12000px;
+    margin-left: 20px;
+}
+
+.footer-intro {
+    max-width: 300px;
+    color: black;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: gold;
+    font-size: 30px;
+}
+.app-links {
+    display: flex; 
+    gap: 10px;
+    align-items: center; 
+    flex-wrap: nowrap; 
+}
+
+.app-links img {
+    width: 150px; 
+    height: auto; 
+    border-radius: 10px; 
+    object-fit: cover; 
+}
+
+.app-links img:hover {
+    transform: scale(1.05); 
+    transition: transform 0.3s ease; 
+}
+
+
+.footer-links {
+    display: flex;
+    gap: 150px;
+}
+
+.column h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin-bottom: 10px;
+}
+
+.column ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    align-items: flex-start ;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center; 
+    text-decoration: none;
+    color: #6a106a;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.social-icon i {
+    font-size: 1.3rem; 
+    margin-bottom: 5px; 
+    margin-right: 8px; 
+}
+
+.social-icon:hover {
+    color: white;
+    transform: scale(1.25); 
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-bottom .links a:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .header {
+        display:flex;
+        justify-content: space-between;
+        align-items:centre;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; 
+        position: fixed;
+        width: 100%;
+        padding: 20px 5px; 
+        gap:70px;
+        background-color: white;
+    }
+    .logo-ajinekriw img {
+        width: 180px;
+        height: auto;
+    }
+    .nav-link1 {
+        display: flex;
+        gap: 0.4rem;
+    }    
+    .nav-button {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .heading h1 {
+        font-size: 1.2rem;
+        margin-top: 150px;
+    }
+
+    /* Revolution, Histoire */
+    .revolution, .histoir {
+        flex-direction: column;
+        text-align: center;
+    }
+    .revolution {
+        margin-top:20px;
+    }
+    .histoir{
+        margin-top:20px;
+    }
+    .revolution img, .histoir img {
+        width: 80%;
+    }
+
+    .mission-vision {
+        flex-direction: column;
+        justify-content: center;
+        margin-top:20px;
+    }
+
+    .mission, .vision {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .fondament{
+        margin-top:20px;
+    }
+    .fondament:hover{
+        display: none;
+    }
+    .fondament ul li {
+        font-size: 0.9rem;
+    }
+
+}
+/* Masquer l'image sur mobile */
+@media screen and (max-width: 600px) {
+    .revolution img {
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .histoir img {
+        display: none;
+    }
+}
+/* Mobil */
+@media screen and (max-width: 600px) {
+    .footer {
+        width: 100%;
+        padding: 20px;
+        margin: 0px;
+    }
+    
+    
+    .container {
+        flex-direction: column;
+        align-items: center; 
+    }
+    .footer-intro .logo {
+        display: none;
+    }
+    .footer-intro p {
+        display: none;
+    }
+    .app-links{
+        display: none;
+    }
+
+    .footer-links {
+        display: flex;
+        
+        gap: 50px;
+    }
+}
+
+
+/* Tablette (600px à 1000px) */
+@media screen and (min-width: 600px) and (max-width: 1000px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        padding: 20px 5px;
+        gap: 70px;
+        background-color: white;
+    }
+    .logo-ajinekriw img {
+        width: 180px;
+        height: auto;
+    }
+    .nav-link1 {
+        display: flex;
+        gap: 0.4rem;
+    }
+    .nav-button {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .heading h1 {
+        font-size: 1.2rem;
+        margin-top: 150px;
+    }
+    .revolution{
+        margin-top: 20px;
+    }
+    .revolution h1{
+        font-size: 1.2rem;
+    }
+    .histoir{
+        margin-top: 20px;
+    }
+    .histoir h1{
+        font-size:1.2rem ;
+    }
+    .revolution img, .histoir img {
+        width: 40%;
+    }
+
+    /* Mission / Vision */
+    .mission-vision {
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .mission, .vision {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Fondament */
+    .fondament {
+        margin-top: 20px;
+    }
+    .fondament:hover {
+        display: none;
+    }
+    .fondament ul li {
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+        width: 100%;
+        padding: 20px;
+        margin: 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 12000px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 50px;
+    }
+}

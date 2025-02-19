@@ -1,0 +1,285 @@
+/* ======= Global Styles ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: none;
+    color: #333;
+}
+
+/* ======= Header ======= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: none;
+}
+
+.logo-ajinekriw img {
+    width: 216px;
+    height: 100px;
+}
+
+/* ======= Navigation Bar ======= */
+.nav-link1 {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-button {
+    font-size: 18px;
+    color: #6a106a;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background-color: #cf9a38;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+    font-size: 20px;
+    background-color: #6a106a;
+    color: #cf9a38;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+}
+
+/* ======= Contact Section ======= */
+.contact-container {
+    display: flex;
+    width: 100%;
+    min-height: 80vh;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ======= Left Side (Form) ======= */
+.contact-left {
+    width: 50%;
+    background-color: #cf9a38;
+    color: #6a106a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-left h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.contact-form label {
+    font-weight: bold;
+    text-align: left;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #6a106a;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+.contact-form button {
+    background: #6a106a;
+    color: #cf9a38;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #cf9a38;
+    color: #6a106a;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+/* ======= Right Side (Image & Info) ======= */
+.contact-right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-right img {
+    max-width: 80%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* ======= Contact Info (WhatsApp & Email) ======= */
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-item span {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ======= Icon Styles ======= */
+.icon-link {
+    text-decoration: none;
+}
+
+.info-icon {
+    font-size: 50px;
+    color: #6a106a;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon-link:hover .info-icon {
+    transform: scale(1.2);
+    color: #cf9a38;
+}
+
+/* ======= Responsive Design ======= */
+@media (max-width: 768px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        width: 100%;
+        padding: 20px 5px;
+        gap: 70px;
+        background-color: white;
+    }
+
+    .logo-ajinekriw img {
+        width: 180px;
+        height: auto;
+    }
+
+    .nav-link1 {
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    .nav-button {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-top: 150px;
+    }
+
+    .contact-left, .contact-right {
+        width: 90%;
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+}
+
+/* ======= For medium screens between 600px and 768px ======= */
+@media (min-width: 601px) and (max-width: 768px) {
+    .contact-left {
+        width: 80%;
+    }
+
+    .contact-right img {
+        display: none;
+    }
+
+    .contact-container {
+        margin-top: 220px;
+    }
+}
+
+/* ======= For small screens (max-width: 600px) ======= */
+@media screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .nav-link1 {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .nav-button {
+        font-size: 14px;
+        padding: 8px 15px;
+        margin: 5px 0;
+    }
+
+    .logo-ajinekriw img {
+        width: 180px;
+        height: auto;
+    }
+
+    .contact-left,
+    .contact-right {
+        width: 100%;
+    }
+
+    .contact-right img {
+        display: none;
+    }
+
+    .contact-container {
+        margin-top: 220px;
+    }
+}
+
