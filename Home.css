@@ -627,7 +627,7 @@ body{
         align-items:flex-start;
     }
     .nav-link1 {
-        flex-direction: column;   
+        flex-direction: row;   
         gap:0px;
         align-items:flex-end;
         place-items:center;
