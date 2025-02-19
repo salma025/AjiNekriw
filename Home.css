@@ -333,45 +333,27 @@ body{
 
 /*ad bar */
 .bar {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #fff;
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #ddd;
 }
 .ad-bar {
-    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
 }
-
-/* Style de base pour les boutons des villes */
 .city-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 2px;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+    margin-bottom: 20px;
 }
 .city-button {
-    display: inline-flex;
-    justify-content: center;   /* Centrer le texte Ã  l'intÃ©rieur du carrÃ© */
-    align-items: center;       /* Centrer le texte Ã  l'intÃ©rieur du carrÃ© */
-    font-size: 15px;
+    display: inline-block;
+    background-color: #cf9a38;
     color: #6a106a;
+    padding: 10px 20px;
+    margin: 5px;
     text-decoration: none;
-    padding: 9px 20px;
-    margin: 9px; /* Espace entre les boutons */
-    border-radius: 30px;
-    background-color: #cf9a38; 
-    transition: all 0.3s ease; 
-
-}
-
-/* Effet d'agrandissement lors du clic */
-.city-button:active {
-    font-size: 26px; /* Agrandit la taille du texte */
-    background-color: #ff6347; /* Change la couleur de fond */
-    transform: scale(1.2); /* Agrandit lÃ©gÃ¨rement le bouton */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Ombre Ã©lÃ©gante */
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 /* Effet au survol pour ordinateur */
 .city-button:hover {
@@ -380,69 +362,83 @@ body{
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Ombre subtile */
     transform: scale(1.1); /* LÃ©gÃ¨re mise en avant */
 }
-/* Animation tactile pour mobile */
-@media screen and (hover: none) {
-    .city-button:active {
-        transform: scale(1.15); /* Ajustement plus discret pour mobile */
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.5re
-    }
-}
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    overflow-x: auto; 
+    scroll-behavior: smooth; 
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    padding: 10px;
+    white-space: nowrap;
+    align-items: center;
+    position: relative;
+}
+.card-container::-webkit-scrollbar {
+    display: none; 
 }
 .card {
-    background-color: #6a106a;
+    background: #6a106a;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    min-width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    /*transition: 0.3s ease;*/
-    transition: color 0.3s ease, box-shadow 0.3s ease; /* Animation fluide */
-    width: 300px;  /* Largeur */
-    height: 400px; /* Hauteur */
 }
-
-
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 47px 47px 45px rgba(0, 0, 0, 0.5); /* Ombre portÃ©e */
+    box-shadow: 47px 47px 45px rgba(0, 0, 0, 0.5); 
 }
-  
 .card img {
     width: 100%;
-    height: 250px;
+    height: 200px;
     object-fit: cover;
-  }
-  
+}
 .card-info {
-    padding: 20px;
+    padding: 15px;
+    margin-top:-20px;
 }
 
 .card-info h3 {
-    font-size: 1.4rem;
-    margin: 0;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top:-100px;
 }
-  
 .card-info p {
     margin: 5px 0;
+    color: black;
 }
-
 .card-info .price {
-    color: #f4c10f;
+    font-size: 16px;
+    color: #cf9a38;
     font-weight: bold;
+}
+.icons2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
 }
 .icons2 p{
     font-size: 1.1rem;
+    color: white;
 }
 .card-info .icons2 {
-    display: flex; /* Utilise Flexbox pour aligner les Ã©lÃ©ments */
-    flex-direction: row; /* Assure un alignement horizontal */
-    align-items: center; /* Centre les icÃ´nes verticalement */
-    margin-top: 10px; /* Ajoute un espacement en haut si nÃ©cessaire */
-    gap: 0px; /* Ajoute un espace entre chaque icÃ´ne */
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px; 
+    gap: 0px; 
 }
 .icons2 {
     margin-top: 5px;
@@ -453,8 +449,30 @@ body{
     margin-right: 5px;
     color: white;
 }
+.nav-button-prev,
+.nav-button-next {
+    background-color:#6a106a;
+    color: #cf9a38 ;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.nav-button-prev {
+    left: 0;
+}
+.nav-button-next {
+    right: 0;
+}
 
-/* Responsive pour les petites tailles d'Ã©cran */
+
+
+
 @media screen and (max-width: 768px) {
     .header {
         flex-direction: column;
@@ -486,7 +504,7 @@ body{
         flex-direction: column;
     }
     .card-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colonne unique ou petites colonnes pour les petits Ã©crans */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 30px;
     }
 
@@ -506,12 +524,9 @@ body{
         text-align: center; 
     }
 
-    .container {
-        flex-direction: column;
-    }
 }
 
-/* Responsive pour trÃ¨s petits Ã©crans (mobile portrait) */
+
 @media screen and (max-width: 640px) {
     .nav-link1 {
         flex-direction: row;  
@@ -529,15 +544,43 @@ body{
         padding: 1px;     
     }
 
-
-    .card {
-        width: 100%;        
-        height: auto;       
+    .bar{
+        width: 100%;
+        background: none;
+    }
+    .card-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        padding: 5px;
+    
+    }
+    .card{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        min-width: 200px; 
+        height: 300px;
     }
 
-    .card-container {
-        grid-template-columns: 1fr;  
-        gap: 10px;                  
+    .card img {
+        height: 120px; 
+    }
+
+    .card-info {
+        font-size: 14px; 
+    }
+
+    .nav-button-prev,
+    .nav-button-next {
+        font-size: 16px; 
+        padding: 8px;
     }
 
    
@@ -571,7 +614,7 @@ body{
 }
 
 
-/* Responsive pour les Ã©crans entre 480px et 600px */
+
 @media screen and (max-width: 450px) {
     .header {
         flex-direction:row;
@@ -601,6 +644,7 @@ body{
         width: 100%;
         padding: 5px;
         font-size: 14px;
+        margin-left:25px;
     }
 
 
@@ -610,6 +654,7 @@ body{
         font-size: 20px; 
         margin-top: 200px;
         text-align:left;
+        margin-left:40px;
     }
 
     .stats {
@@ -620,16 +665,34 @@ body{
     .feature-section {
         flex-direction: column;
         padding: 10px;
+        width:200%;
     }
-
+    .bar{
+        width: 200%;
+        background: none;
+    }
     .card-container {
-        grid-template-columns: 1fr;  /* Une seule colonne pour Ã©conomiser de l'espace */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        grid-template-columns: repeat(3,1fr);
         gap: 20px;
+    
+    }
+    .card{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
     }
 
     .footer {
         text-align: center;
         padding: 10px;
+        width:200%;
     }
 
     .footer-links {
@@ -650,7 +713,7 @@ body{
     }
 
     .contact-left, .contact-right {
-        width: 100%;  /* Assurer que les deux sections prennent toute la largeur */
+        width: 100%;  
     }
 
     .contact-form {
@@ -658,7 +721,7 @@ body{
     }
 
     .contact-form button {
-        font-size: 16px;  /* Ajuster la taille du bouton */
+        font-size: 16px;  
         padding: 10px;
     }
 
@@ -667,7 +730,7 @@ body{
     }
 
     .contact-right img {
-        width: 100%; /* RÃ©duire la taille de l'image */
+        width: 100%;
         height: auto;
         display: block;
         margin-bottom: 15px;
