@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>AjiNkriw</title>
+    <link rel="stylesheet" href="Home.css">
+    <!-- Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="google-site-verification" content="IG1_xc_C2idNkMg1kb9zCeJ6cSwKFK8KgsC3uelG2qw" />
+    <!-- Lien vers Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Lien vers Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+</head>
+<body > 
+    <header>
+        <div class="logo">
+            <img src="logo-ajinkriw-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="About.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="app.html">Télécharger l'application</a></li>
+        </ul>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="mobile-menu">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="About.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="app.html">Télécharger l'application</a></li>
+        </ul>
+    </div>
+    <script>
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+      
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    
+        
+        const navLinks = document.querySelectorAll('.nav-links a');
+    
+
+        const currentURL = window.location.href;
+    
+       
+        navLinks.forEach(link => {
+            if (link.href === currentURL) {
+                link.classList.add('active');
+            }
+    
+            
+            link.addEventListener('click', () => {
+                navLinks.forEach(link => link.classList.remove('active')); 
+                link.classList.add('active'); 
+            });
+        });
+    </script>
+    
+
+    <section class="hero">
+        <section class="hero-left">
+            <h1>Apropose de nous</h1>
+            <p>🏠 La première application de colocation pour étudiants 📚 au Maroc.</p>
+            <h2>"Téléchargez notre application pour profiter de nos services de location de chambres adaptées aux étudiants."</h2>
+            <div class="app-link">
+                <a href="https://apps.apple.com/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Télécharger sur l'App Store" class="app-button">
+                </a>
+                <a href="https://play.google.com/store" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Obtenir sur Google Play" class="app-button">
+                </a>
+            </div>
+        </section>
+        <section class="hero-right">
+            <div class="hero-content">
+                <h1>Recherchez, explorez et réservez votre <span class="highlight">chambre !</span></h1>
+                <div class="search-bar">
+                    <div class="map-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Recherche par ville ou université" onkeyup="filterResults()">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="search-results" id="searchResults"></div>
+            </div>
+        </section>
+    </section>
+    <!-- Section des détails de l'annonce -->
+    <div id="propertyDetails" style="display: none; margin-top: 20px;">
+        <h2 id="propertyTitle"></h2>
+        <p id="propertyCity"></p>
+        <p id="propertyPrice"></p>
+        <p id="propertyDescription"></p>
+        <button onclick="closeDetails()">Fermer</button>
+    </div>
+
+    <main>
+        <section class="services-section">
+            <h2>Découvrez Nos Services – Votre logement étudiant en toute simplicité !</h2>
+        </section>
+        <section class="feature">
+            <div class="feature-section">
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Propriétés vérifiées et approuvées</h3> 
+                    <p>Nous sélectionnons des hébergements répondant aux normes de qualité et de sécurité.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-bolt"></i></div>
+                    <h3>Réservation simple et rapide</h3>
+                    <p>Un processus fluide pour sécuriser votre logement en quelques clics.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Emplacements stratégiques</h3>
+                    <p>À proximité des universités, des transports et des commodités.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-coins"></i></div>
+                    <h3>Des prix imbattables</h3>
+                    <p>Profitez des meilleures offres sans frais cachés.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-headset"></i></div>
+                    <h3>Assistance dédiée 24h/24 et 7j/7</h3>
+                    <p>Nous sommes là pour vous accompagner à chaque étape.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon-ftr"><i class="fas fa-life-ring"></i></div>
+                    <h3>Support personnalisé</h3>
+                    <p>Un accompagnement sur-mesure pour répondre à toutes vos questions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="bar">
+        <div class="ad-bar">
+            <div class="city-buttons">
+                <a href="mohamadia.html" class="city-button">Mohammedia</a>
+                <!--<a href="#" class="city-button">Casablanca</a>
+                <a href="#" class="city-button">Fès</a>
+                <a href="#" class="city-button">Settat</a>-->
+            </div>
+    
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="cardContainer">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide card">
+                        <img src="1300x600-maisons-pierre-lemag-quel-type-maison-choisir-couv.jpg" alt="Logement">
+                        <div class="card-info">
+                            <h2>Mohamadia</h2>
+                            <h3>Hay elsallam</h3>
+                            <p class="price">From 2500DH/Month</p>
+                        </div>
+                        <div class="info">
+                            <div class="person">
+                                <i class="fas fa-user"></i>
+                                <h1>5</h1>
+                            </div>
+                            <div class="sofa">
+                                <i class="fa-solid fa-couch"></i>
+                                <i class="fas fa-check-circle verified-icon"></i>
+                            </div>
+                            <div class="wifi">
+                                <i class="fas fa-wifi wifi-icon"></i>
+                                <i class="fas fa-times-circle x-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 4, // Affiche 4 cartes par ligne
+            spaceBetween: 10, // Espacement entre les cartes
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true, // Rendre la pagination cliquable
+            },
+            on: {
+                slideChange: function () {
+                    // Ajouter la classe "fixed" quand on commence à swiper
+                    document.querySelector('.bar').classList.add('fixed');
+                },
+                slideChangeTransitionEnd: function () {
+                    // Enlever la classe "fixed" quand le swiper est terminé
+                    document.querySelector('.bar').classList.remove('fixed');
+                }
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2, // Affiche 2 cartes sur des écrans de taille moyenne
+                },
+                1024: {
+                    slidesPerView: 3, // Affiche 3 cartes sur des écrans plus grands
+                }
+            }
+        });
+
+
+    </script>    
+
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-intro">
+                <div class="logo"><img src="logo-ajinkriw-removebg-preview.png" alt="AjiNkriw Logo" width="216px" height="100px"></div>
+                <p>🏠 La première application de colocation pour étudiants 📚 au Maroc.</p>
+                <div class="app-links">
+                    <a href="https://apps.apple.com/" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Télécharger sur l'App Store" class="app-button">
+                    </a>
+                    <a href="https://play.google.com/store" target="_blank">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Obtenir sur Google Play" class="app-button">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="column">
+                    <h3>Follow Us</h3>
+                    <div class="icons">
+                        <a href="https://www.instagram.com/ajinkriw_?igsh=MXRzcGRiNjd0YXMwNw==" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="#" class="social-icon" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-facebook"></i>
+                            <span>Facebook</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="column">
+                    <h3>Contact Us</h3>
+                    <div class="icons">
+                        <a href="mailto:AjiNkriw01@gmail.com" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="#" class="social-icon" class="social-icon" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>E-MAIL</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <script src="script.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

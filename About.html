@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos de Nous</title>
+    <link rel="stylesheet" href="About.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo-ajinkriw-removebg-preview.png" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" >Accueil</a></li>
+            <li><a href="About.html" class="active">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="app.html">Télécharger l'application</a></li>
+        </ul>
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+    <div class="mobile-menu">
+        <ul class="nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="About.html">À propos</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="app.html">Télécharger l'application</a></li>
+        </ul>
+    </div>
+    <script>
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+      
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    
+        
+        const navLinks = document.querySelectorAll('.nav-links a');
+    
+
+        const currentURL = window.location.href;
+    
+       
+        navLinks.forEach(link => {
+            if (link.href === currentURL) {
+                link.classList.add('active');
+            }
+    
+            
+            link.addEventListener('click', () => {
+                navLinks.forEach(link => link.classList.remove('active')); 
+                link.classList.add('active'); 
+            });
+        });
+    </script>
+    
+
+    <section class="hero">
+        <h1>Apropose de nous</h1>
+        <p>🏠 La première application de colocation pour étudiants 📚 au Maroc.</p>
+        <h2>"Téléchargez notre application pour profiter de nos services de location de chambres adaptées aux étudiants."</h2>
+        <div class="app-link">
+            <a href="https://apps.apple.com/" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Télécharger sur l'App Store" class="app-button">
+            </a>
+            <a href="https://play.google.com/store" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Obtenir sur Google Play" class="app-button">
+            </a>
+        </div>
+    </section>
+    <section class="about">
+        <div class="cnt-text">
+            <div class="text">
+                <h2>AjiNkriw : La Révolution du Logement Étudiant</h2>
+                <p>
+                    Trouver un logement en tant qu’étudiant n’a jamais été aussi simple ! AjiNkriw est bien plus 
+                    qu’une plateforme de colocation : c’est un écosystème conçu par et pour les étudiants, qui 
+                    simplifie la recherche de logement, met en relation des colocataires compatibles et centralise 
+                    des services essentiels pour la vie universitaire.
+                </p>
+                <p>
+                    Notre objectif ? Accompagner les étudiants marocains à chaque étape de leur parcours, en leur 
+                    offrant une plateforme intuitive, sécurisée et enrichie de bons plans, d’événements et 
+                    d’opportunités exclusives.
+                </p>
+            </div>
+            <hr>
+            <div class="text">
+                <h2>Notre Histoire : Pensée par et pour les Étudiants</h2>
+                <p>
+                    L’aventure a commencé lorsque Zakaria Mesbah, étudiant en génie informatique à la FST Mohammedia, 
+                    a décidé de participer à une compétition organisée par le club Enactus Mohammedia. Pour concrétiser 
+                    son projet, il a sollicité l’expertise de Mehdi Mesbah, entrepreneur expérimenté, et de Nassima 
+                    Mesbah, ingénieure en développement. 
+                </p>
+                <p>
+                    Ensemble, ils ont analysé en profondeur la problématique du logement étudiant et ont constaté 
+                    la nécessité de développer une solution digitale efficace. Après une validation lors de la 
+                    compétition Idea Track d’Enactus, AjiNkriw est né avec une ambition claire : révolutionner la vie 
+                    étudiante grâce à une plateforme complète et connectée.
+                </p>
+            </div>
+        </div>
+        <div class="photo">
+            <img src="image (1).png" alt="">
+        </div>
+    </section>
+    <section>
+        <div class="mission-vision">
+            <div class="mission">
+                <div class="msn-text">
+                    <h2>NOTRE MISSION : </h2>
+                    <h3>SIMPLIFIER, CONNECTER, ACCOMPAGNER</h3>
+                    <p>
+                        Chez AjiNkriw, nous nous engageons à simplifier la recherche de logement étudiant en 
+                        offrant une plateforme intuitive et accessible. Nous connectons les étudiants entre eux en 
+                        facilitant la mise en relation avec des colocataires compatibles et en centralisant les 
+                        services essentiels à leur quotidien.
+                    </p>
+                </div>
+            </div>       
+            <div class="vision">
+                <div class="vsn-text">
+                    <h2>NOTRE VISION : </h2>
+                    <h3>UN RÉSEAU ÉTUDIANT SANS FRONTIÈRES</h3>
+                    <p>
+                        Notre ambition dépasse les frontières du Maroc. Nous voulons connecter tous les étudiants marocains, 
+                        qu’ils soient au Maroc ou à l’étranger, en créant une communauté solidaire et engagée, où chacun peut 
+                        trouver du soutien, des conseils et des opportunités.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="fondament">
+            <h4>NOS 10 FONDEMENTS : LES CLÉS DE NOTRE RÉUSSITE</h4>
+            <ul>
+                <li>Un service dédié aux étudiants</li>
+                <li>Une expérience utilisateur intuitive et innovante</li>
+                <li>Une équipe engagée et passionnée</li>
+                <li>Un modèle économique clair et durable</li>
+                <li>Une approche basée sur les besoins réels des étudiants</li>
+                <li>L’innovation au cœur de notre développement</li>
+                <li>Un apprentissage constant et une tolérance à l’échec</li>
+                <li>Une adaptation continue pour répondre aux évolutions du marché</li>
+                <li>Une croissance maîtrisée et progressive</li>
+                <li>Un impact durable sur la vie étudiante</li>
+            </ul>
+        </div>
+    </section>
+    <footer class="container">
+        <div class="contact-form">
+            <h2>Contactez-nous</h2>
+            <form>
+                <label for="name">Votre nom</label>
+                <input type="text" id="name" placeholder="Entrez votre nom" required>
+    
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" placeholder="Entrez votre adresse e-mail" required>
+    
+                <label for="message">Votre message</label>
+                <textarea id="message" placeholder="Entrez votre message" required></textarea>
+    
+                <button type="submit">ENVOYER</button>
+            </form>
+        </div>
+    
+        <div class="contact-info">
+            <h3>Appelez-nous</h3>
+            <p>📞  +212 653-345913</p>
+            <h3>Contactez-nous</h3>
+            <div class="social-icons">
+                <a href="mailto:votre-adresse@gmail.com" target="_blank" title="Envoyer un email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" title="Discuter sur WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <h3>Réseaux sociaux</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>          
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuIcon = document.querySelector('#menu-icon');
+            const navLinks = document.querySelector('.nav-link ul');
+            menuIcon.addEventListener('click', function () {
+                // Bascule la classe 'open' sur la liste des liens
+                navLinks.classList.toggle('open');
+                // Bascule l'icône du menu (par exemple, entre ☰ et ✕)
+                menuIcon.classList.toggle('bx-x');
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
