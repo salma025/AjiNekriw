@@ -19,10 +19,10 @@
     <!-- Lien vers Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Swiper CSS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 
 </head>
@@ -95,6 +95,33 @@
                 </a>
             </div>
         </section>
+        <div class="annonce-container">
+            <div class="annonces">
+                <div class="annonce">🏠 Trouvez votre logement étudiant en quelques clics ! 📲 Disponible aussi sur notre application mobile.</div>
+                <div class="annonce">📲 Notre application mobile est disponible ! Téléchargez-la et trouvez votre logement rapidement.</div>
+                <div class="annonce">🔑 Simplifiez votre recherche de logement étudiant avec notre plateforme ! </div>
+                <div class="annonce">🏢 Colocations, résidences étudiantes – Trouvez l'option qui vous convient !</div>
+                <div class="annonce">📅 Réservez votre logement dès maintenant et évitez le stress de la rentrée !</div>
+                <div class="annonce">📞 Besoin d'aide ? Contactez notre support client 24/7 pour toute question sur les logements.</div>
+            </div>
+        </div>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let index = 0;
+                const annonces = document.querySelectorAll(".annonce");
+                const totalAnnonces = annonces.length;
+    
+                function switchAnnonce() {
+                    annonces.forEach(a => a.classList.remove("visible")); 
+                    annonces[index].classList.add("visible"); 
+                    index = (index + 1) % totalAnnonces; 
+                }
+    
+                switchAnnonce(); 
+                setInterval(switchAnnonce, 3000); 
+            });
+        </script>
         <section class="hero-right">
             <div class="hero-content">
                 <h1>Recherchez, explorez et réservez votre <span class="highlight">chambre !</span></h1>
@@ -117,6 +144,7 @@
         <p id="propertyDescription"></p>
         <button onclick="closeDetails()">Fermer</button>
     </div>
+
 
     <main>
         <section class="services-section">
@@ -375,36 +403,7 @@
             </div>
         </div>
     </section>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 4, // Affiche 4 cartes par ligne
-            spaceBetween: 10, // Espacement entre les cartes
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, // Rendre la pagination cliquable
-            },
-            on: {
-                slideChange: function () {
-                    // Ajouter la classe "fixed" quand on commence à swiper
-                    document.querySelector('.bar').classList.add('fixed');
-                },
-                slideChangeTransitionEnd: function () {
-                    // Enlever la classe "fixed" quand le swiper est terminé
-                    document.querySelector('.bar').classList.remove('fixed');
-                }
-            },
-            breakpoints: {
-                768: {
-                    slidesPerView: 2, // Affiche 2 cartes sur des écrans de taille moyenne
-                },
-                1024: {
-                    slidesPerView: 3, // Affiche 3 cartes sur des écrans plus grands
-                }
-            }
-        });
-
-
-    </script>    
+  
 
     <footer class="footer">
         <div class="container">
