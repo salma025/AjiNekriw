@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - AjiNkriw</title>
+    <title>Contactez-nous - AjiNkriw</title>
     <link rel="stylesheet" href="contact.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <header>
@@ -17,8 +19,8 @@
             <img src="logo-ajinkriw-removebg-preview.png" alt="Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" >Accueil</a></li>
-            <li><a href="About.html" >À propos</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="About.html">À propos</a></li>
             <li><a href="Contact.html" class="active">Contact</a></li>
             <li><a href="app.html">Télécharger l'application</a></li>
         </ul>
@@ -36,39 +38,11 @@
             <li><a href="app.html">Télécharger l'application</a></li>
         </ul>
     </div>
-    <script>
-        const burger = document.querySelector('.burger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-      
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-    
-        
-        const navLinks = document.querySelectorAll('.nav-links a');
-    
-
-        const currentURL = window.location.href;
-    
-       
-        navLinks.forEach(link => {
-            if (link.href === currentURL) {
-                link.classList.add('active');
-            }
-    
-            
-            link.addEventListener('click', () => {
-                navLinks.forEach(link => link.classList.remove('active')); 
-                link.classList.add('active'); 
-            });
-        });
-    </script>
 
     <section class="contact-container">
         <div class="contact-left">
             <h1>Contactez-nous</h1>
-            <form class="contact-form" action="send_email.php" method="POST">
+            <form class="contact-form" action="https://formspree.io/f/maykpdqn" method="POST">
                 <label for="name">Votre nom</label>
                 <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
 
@@ -80,6 +54,9 @@
 
                 <label for="message">Votre message</label>
                 <textarea id="message" name="message" placeholder="Écrivez votre message ici" required></textarea>
+
+                <!-- reCAPTCHA -->
+                <div class="g-recaptcha" data-sitekey="VOTRE_CLÉ_SITE_RECAPTCHA"></div>
 
                 <button type="submit">Envoyer</button>
             </form>
