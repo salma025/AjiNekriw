@@ -83,7 +83,6 @@
 
     <section class="hero">
         <section class="hero-left">
-            <h1>Apropose de nous</h1>
             <p>🏠 La première application de colocation pour étudiants 📚 au Maroc.</p>
             <h2>"Téléchargez notre application pour profiter de nos services de location de chambres adaptées aux étudiants."</h2>
             <div class="app-link">
@@ -144,8 +143,74 @@
         <p id="propertyDescription"></p>
         <button onclick="closeDetails()">Fermer</button>
     </div>
+    <script>
+  // Exemple de données
+  const properties = [
+    {
+      title: "Chambre étudiante à Casablanca",
+      city: "Casablanca",
+      price: "1200 MAD/mois",
+      description: "À 5 min de la faculté Ben M'sik, WiFi inclus."
+    },
+    {
+      title: "Studio proche de l'université de Fès",
+      city: "Fès",
+      price: "1000 MAD/mois",
+      description: "Meublé, calme et sécurisé."
+    },
+    {
+      title: "Appartement partagé à Rabat",
+      city: "Rabat",
+      price: "1500 MAD/mois",
+      description: "Proche du tram, idéal pour 2 personnes."
+    }
+  ];
 
+  function filterResults() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const resultsDiv = document.getElementById("searchResults");
+    resultsDiv.innerHTML = ""; // Réinitialiser les anciens résultats
 
+    const filtered = properties.filter(item => 
+      item.city.toLowerCase().includes(input) ||
+      item.title.toLowerCase().includes(input)
+    );
+
+    if (filtered.length === 0 && input !== "") {
+      resultsDiv.innerHTML = "<p>Aucun résultat trouvé.</p>";
+      return;
+    }
+
+    filtered.forEach(item => {
+      const resultCard = document.createElement("div");
+      resultCard.style.padding = "10px";
+      resultCard.style.borderBottom = "1px solid #ddd";
+      resultCard.style.cursor = "pointer";
+
+      resultCard.innerHTML = `
+        <h4 style="margin: 0; color: #333;">${item.title}</h4>
+        <p style="margin: 5px 0; color: #666;">${item.city} – ${item.price}</p>
+        <p style="margin: 0; font-size: 14px; color: #777;">${item.description}</p>
+      `;
+
+      resultCard.onclick = () => showDetails(item);
+
+      resultsDiv.appendChild(resultCard);
+    });
+  }
+
+  function showDetails(property) {
+    document.getElementById("propertyDetails").style.display = "block";
+    document.getElementById("propertyTitle").textContent = property.title;
+    document.getElementById("propertyCity").textContent = "Ville : " + property.city;
+    document.getElementById("propertyPrice").textContent = "Prix : " + property.price;
+    document.getElementById("propertyDescription").textContent = property.description;
+  }
+
+  function closeDetails() {
+    document.getElementById("propertyDetails").style.display = "none";
+  }
+</script>
     <main>
         <section class="services-section">
             <h2>Découvrez Nos Services – Votre logement étudiant en toute simplicité !</h2>
