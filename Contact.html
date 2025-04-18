@@ -39,45 +39,75 @@
         </ul>
     </div>
 
-    <section class="contact-container">
-        <div class="contact-left">
-            <h1>Contactez-nous</h1>
-            <form class="contact-form" action="https://formspree.io/f/maykpdqn" method="POST">
-                <label for="name">Votre nom</label>
-                <input type="text" id="name" name="name" placeholder="Entrez votre nom" required>
+    <script>
+        const burger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+      
+        burger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+    
+        
+        const navLinks = document.querySelectorAll('.nav-links a');
+    
 
-                <label for="phone">Votre téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="Entrez votre numéro de téléphone" pattern="[0-9]{10}" required>
+        const currentURL = window.location.href;
+    
+       
+        navLinks.forEach(link => {
+            if (link.href === currentURL) {
+                link.classList.add('active');
+            }
+    
+            
+            link.addEventListener('click', () => {
+                navLinks.forEach(link => link.classList.remove('active')); 
+                link.classList.add('active'); 
+            });
+        });
+    </script>
+    
 
-                <label for="email">Votre e-mail</label>
-                <input type="email" id="email" name="email" placeholder="Entrez votre e-mail" required>
+    <section class="contact-header">
+        <h2>Contactez-nous</h2>
+        <p>Notre équipe de soins aux clients est prête à vous répondre.</p>
+    </section>
 
-                <label for="message">Votre message</label>
-                <textarea id="message" name="message" placeholder="Écrivez votre message ici" required></textarea>
-
-                <!-- reCAPTCHA -->
-                <div class="g-recaptcha" data-sitekey="VOTRE_CLÉ_SITE_RECAPTCHA"></div>
-
-                <button type="submit">Envoyer</button>
+    <section class="contact-body container">
+        <div class="left">
+            <h3>Contactez-nous !</h3>
+            <p>Vous avez une question ? Vous souhaitez nous proposer un partenariat ?</p>
+            <form>
+                <input type="text" placeholder="Prénom">
+                <input type="text" placeholder="Nom">
+                <input type="email" placeholder="Votre adresse email">
+                <input type="tel" placeholder="Numéro de téléphone">
+                <textarea placeholder="Message"></textarea>
+                <button type="submit" class="btn submit">ENVOYER</button>
             </form>
         </div>
+        <div class="right">
+            <h3>Location de Logements pour Étudiants</h3>
+            <p>Vous cherchez un logement adapté à vos études ? Nous avons des options idéales pour vous, à des prix compétitifs et dans des emplacements pratiques pour les étudiants.</p>
 
-        <div class="contact-right">
-            <img src="Adobe Express - file.png" alt="Support Team">
-            <div class="contact-info">
-                <div class="info-item">
-                    <a href="https://wa.me/212653345913" target="_blank" class="icon-link">
-                        <i class="fab fa-whatsapp info-icon"></i>
-                    </a>
-                    <span>+212 653-345913</span>
-                </div>
-                <div class="info-item">
-                    <a href="mailto:AjiNkriw01@gmail.com" class="icon-link" target="_blank">
-                        <i class="fas fa-envelope info-icon"></i>
-                    </a>
-                    <span>AjiNkriw01@gmail.com</span>
-                </div>
-            </div>
+            <h4>Nos Services</h4>
+            <ul>
+                <li>Logements à proximité des universités et écoles</li>
+                <li>Options de location flexibles (court et long terme)</li>
+                <li>Wi-Fi, meublé, et services inclus dans certaines offres</li>
+                <li>Assistance 24/7 pour toute question ou besoin urgent</li>
+            </ul>
+
+            <h4>Comment réserver</h4>
+            <p>Rien de plus simple ! Il vous suffit de remplir notre formulaire de réservation en ligne et nous vous aiderons à trouver le logement qui vous correspond.</p>
+
+            <h4>Téléchargez notre application</h4>
+            <p>Pour accéder plus facilement à nos services, <a href="app.html">téléchargez notre application</a> et consultez toutes nos offres directement depuis votre téléphone.</p>
+
+            <h4>Autres moyens de nous contacter</h4>
+            <p>📘 Suivez-nous sur <a href="#">Facebook</a><br>
+            💬 Pour toute question, contactez-nous directement par <a href="mailto:contact@votre-site.com">email</a>.</p>
         </div>
     </section>
 
