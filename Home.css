@@ -9,18 +9,17 @@
 header {
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     align-items: center;
     padding: 20px;
     background: white;
     color: #cf9a38;
-    position: relative;
     z-index: 10;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
     transition: background-color 0.3s ease;
-}
-
-header:hover {
-    background-color: white; 
 }
 
 .logo img {
@@ -187,25 +186,14 @@ header:hover {
     text-shadow: 2px 2px px rgba(0, 0, 0, 0.5); 
     font-weight: bold;
 }
-.hero h1 {
-    margin-top: 90px;
-    margin-bottom: 10px; 
-}
 .hero p{
     margin-bottom: 20px;
     font-size: 30px;
+    margin-top:100px;
 }
 .hero h2{
     font-size:20px;
     margin-bottom: 20px;
-}
-.hero-right {
-    height: 10vh; 
-    position: relative;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .app-link {
     display: flex;
@@ -224,59 +212,140 @@ header:hover {
 .app-button:hover {
     transform: scale(1.1);
 }
-.hero-content {
-    text-align: left;
+.hero-right {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #f7f8fc, #eef1f7);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+    margin-top: 60px;
+    flex-direction: column;
+    text-align: center;
 }
 
 .hero-content h1 {
-    font-size: 30px;
-    color: #333;
-    margin-bottom: 20px;
-    margin-top: 100px;
+    font-size: 2rem;
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 25px;
+    animation: fadeInDown 0.6s ease;
 }
+
 .highlight {
-    color: #cf9a38;
-    font-weight: bold;
+    color: #e8a94e;
+    font-weight: 700;
 }
+
 .search-bar {
     display: flex;
     align-items: center;
-    background: #fff;
-    padding: 10px;
-    border-radius: 30px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    padding: 12px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+    transition: box-shadow 0.3s ease;
 }
+
+.search-bar:focus-within {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
 .map-icon i {
-    color: #cf9a38;
-    margin-right: 10px;
-}
-#searchInput {
-    flex-grow: 1;
-    border: none;
-    outline: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 30px;
-}
-.search-btn {
-    background: #cf9a38;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    margin-left: 10px;
-    cursor: pointer;
-}
-.search-btn i {
-    color: #fff;
+    color: #e8a94e;
+    margin-right: 12px;
     font-size: 18px;
 }
-.search-results {
-    margin-top: 20px;
-    padding: 10px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 30px;
+    background-color: transparent;
 }
+
+.search-btn {
+    background: #e8a94e;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-btn i {
+    color: white;
+    font-size: 18px;
+}
+
+.search-btn:hover {
+    background: #d08930;
+}
+
+/* SEARCH RESULTS */
+.search-results {
+    margin-top: 25px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* DETAILS SECTION */
+#propertyDetails {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    margin-top: 40px;
+    max-width: 700px;
+    margin-inline: auto;
+    transition: all 0.3s ease;
+}
+
+#propertyDetails h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#propertyDetails p {
+    color: #555;
+    margin-bottom: 8px;
+}
+
+#propertyDetails button {
+    background-color: #e8a94e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#propertyDetails button:hover {
+    background-color: #d08930;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 /* Styles responsive */
 
@@ -494,32 +563,42 @@ main {
     justify-content: space-between;
     width: 100%;
     height: 100%;
-    margin-top: 0px;  
+    margin-top: 20px;  
 }
 
 .swiper-wrapper {
-    display: flex;
-    
+    display: flex;  
 }
 .swiper-slide {
-    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 250px;
+    background: #6a106a;
     border-radius: 20px;
     overflow: hidden;
     margin: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     flex: 1 1 280px;
-    max-width: 350px;
     height: auto;
     padding: 20px;
     text-align: left;
 }
 .swiper-slide h2{
     margin-bottom: 12px;
-    color: #cf9a38;
+    color: white;
+    font-size: 20px;
 }
 .swiper-slide h3{
     margin-bottom:10px;
+    color: white;
+    font-size: 18px;
+}
+.swiper-slide p{
+    color: #cf9a38;
+    font-size: 20px;
 }
 .swiper-slide:hover {
     transform: translateY(-5px);
@@ -527,10 +606,13 @@ main {
 
 .swiper-slide img {
     width: 100%;
-    height: 220px;
+    height: 200px;
     object-fit: cover;
     border-bottom: 1px solid #ddd;
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px
 }
+
 .swiper-pagination {
     position: absolute;
     bottom: 10px;
@@ -574,6 +656,7 @@ main {
     gap: 10px;
     margin-top: 10px;
     margin-left: 9px;
+    color: white;
 }
 .info .person h1{
     font-size: 20px;
@@ -729,6 +812,51 @@ main {
     .footer-links {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+
+.annonce-container {
+    width: 100%;
+    background-color: #cf9a38;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    height: 50px;
+    position: relative;
+}
+
+.annonce {
+    font-family: 'Poppins', sans-serif;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    transition: opacity 1s ease-in-out; 
+}
+
+.annonce.visible {
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .annonce-container {
+        font-size: 16px;
+        padding: 8px; 
+        height: 65px; 
+        text-align:center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .annonce-container {
+        font-size: 14px; 
+        padding: 6px; 
+        height: 50px; 
     }
 }
 
