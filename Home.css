@@ -861,6 +861,77 @@ main {
 }
 
 
-
+/*step*/
+.student-housing-guide {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .student-housing-guide h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .student-housing-guide .subtitle {
+    color: #777;
+    margin-bottom: 30px;
+  }
+  
+  .steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .step {
+    flex: 1 1 30%;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .step:hover {
+    transform: scale(1.03);
+  }
+  
+  .number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .step h3 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  
+  .step p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Specific Colors for Steps */
+  .step1 .number { background: #fdb813; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step2 .number { background: #f78c1f; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step3 .number { background: #d54c9c; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step4 .number { background: #7a67d3; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step5 .number { background: #2e4a91; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step6 .number { background: #3caea3; color: white; padding: 5px 10px; border-radius: 20px; }
+  .step7 .number { background: #20639b; color: white; padding: 5px 10px; border-radius: 20px; }
+  
+  
 
 
