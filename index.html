@@ -27,59 +27,51 @@
 
 </head>
 <body > 
-    <header>
-        <div class="logo">
-            <img src="logo-ajinkriw-removebg-preview.png" alt="Logo">
+    <!--=============== HEADER ===============-->
+<header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <img src="logo-ajinkriw-removebg-preview.png" class="nav__logo" alt="Logo" />
+  
+        <div class="nav__toggle" id="nav-toggle" role="button" aria-label="Toggle menu">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Accueil</a></li>
-            <li><a href="About.html">À propos</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="app.html">Télécharger l'application</a></li>
+      </div>
+  
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="Contact.html" class="nav__link">Contactez-nous</a></li>
+          <li><a href="About.html" class="nav__link">À propos de nous</a></li>
+          <li><a href="app.html" class="nav__link">Télécharger l'app</a></li>
         </ul>
-        <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-    <div class="mobile-menu">
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="About.html">À propos</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="app.html">Télécharger l'application</a></li>
-        </ul>
-    </div>
-    <script>
-        const burger = document.querySelector('.burger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-      
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
+      </div>
+    </nav>
+  </header>
+  
+  <!--=============== MAIN JS ===============-->
+  <script>
+    /*=============== SHOW MENU ===============*/
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId);
+  
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("show-menu");
+          toggle.classList.toggle("show-icon");
         });
-    
-        
-        const navLinks = document.querySelectorAll('.nav-links a');
-    
-
-        const currentURL = window.location.href;
-    
-       
-        navLinks.forEach(link => {
-            if (link.href === currentURL) {
-                link.classList.add('active');
-            }
-    
-            
-            link.addEventListener('click', () => {
-                navLinks.forEach(link => link.classList.remove('active')); 
-                link.classList.add('active'); 
-            });
-        });
-    </script>
-    
+      }
+    };
+  
+    showMenu("nav-toggle", "nav-menu");
+  </script>
+  
+  <!--=============== REMIX ICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
 
     <section class="hero">
         <section class="hero-left">
@@ -468,7 +460,6 @@
             </div>
         </div>
     </section>
-    
     <div class="student-housing-guide">
         <h2>Étapes pour Louer un Logement Étudiant<br>Facilement et en Toute Sécurité</h2>
         <p class="subtitle">Suivez ces conseils pour une installation réussie</p>
@@ -522,6 +513,9 @@
       </div>
       
       
+      
+            
+
     <footer class="footer">
         <div class="container">
 
