@@ -1,285 +1,328 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-/* ======= Header ======= */
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
-header {
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --black-color:none;
+  --black-color-light: hsl(220, 24%, 15%);
+  --black-color-lighten: hsl(220, 20%, 18%);
+  --white-color: #cf9138;
+  --body-color: hsl(220, 100%, 97%);
+
+  /*========== Font and typography ==========*/
+  --body-font: "Montserrat", sans-serif;
+  --normal-font-size: 0.938rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*=============== REUSABLE CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 16px hsla(220, 32%, 8%, 0.3);
+  z-index: var(--z-fixed);
+}
+
+/*=============== NAV ===============*/
+.nav {
+  height: var(--header-height);
+}
+
+.nav__logo {
+  width: 120px;
+  transition: transform 0.3s ease;
+}
+
+.nav__logo:hover {
+  transform: scale(1.05); 
+}
+
+.nav__data {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav__toggle {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.nav__burger,
+.nav__close {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: max-content;
+  height: max-content;
+  font-size: 1.25rem;
+  color: var(--white-color);
+  transition: opacity 0.1s, transform 0.4s;
+}
+
+.nav__close {
+  opacity: 0;
+}
+
+/*=============== MOBILE NAV ===============*/
+@media screen and (max-width: 1118px) {
+  .nav__menu {
+    position: absolute;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    height: calc(50vh - 3.5rem);
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, top 0.4s ease;
+  }
+  .nav__data {
+    padding: 0 0rem;
+    width: 100%;
+  }
+  .show-menu {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav__link {
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+
+  .nav__link:hover {
+    background-color: #6a106a;
+  }
+
+  .show-icon .nav__burger {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  .show-icon .nav__close {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+  
+}
+
+/*=============== DESKTOP NAV ===============*/
+@media screen and (min-width: 1118px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background: white;
-    color: #cf9a38;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__menu {
+    display: flex;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .nav__link {
+    color: var(--white-color);
+    padding: 0.75rem 0;
     position: relative;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-    transition: background-color 0.3s ease;
-}
+    transition: color 0.3s;
+  }
 
-header:hover {
-    background-color: white; 
-}
+  .nav__link:hover {
+    color: var(--black-color-light);
+  }
 
-.logo img {
-    width: 216px;
-    transition: transform 0.3s ease;
-}
-
-.logo img:hover {
-    transform: scale(1.05); 
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: #cf9a38;
-    text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px; 
-    transition: color 0.3s ease; 
-}
-
-.nav-links a:hover {
-    color: #6a106a; 
-}
-
-.nav-links a.active {
-    color: white; 
-    background-color: #cf9a38; 
-    padding: 5px 10px; 
-    border-radius: 5px; 
-    font-weight: 600; 
-}
-
-.burger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.burger span {
-    background: #cf9a38;
-    height: 6px;
-    width: 40px;
-    margin: 5px;
-    display: block;
-    transition: transform 0.3s ease; 
-}
-.burger span:nth-child(1) {
-    transform-origin: top left;
-}
-
-.burger span:nth-child(2) {
-    opacity: 1;
-}
-
-.burger span:nth-child(3) {
-    transform-origin: bottom left;
-}
-
-.burger.active span:nth-child(1) {
-    transform: rotate(45deg);
-}
-
-.burger.active span:nth-child(2) {
-    opacity: 0; 
-}
-
-.burger.active span:nth-child(3) {
-    transform: rotate(-45deg); 
-}
-
-.mobile-menu {
-    display: none;
+  .nav__link::after {
+    content: "";
     position: absolute;
-    top: 155px;
+    width: 0%;
+    height: 2px;
     left: 0;
-    background: white;
+    bottom: -4px;
+    background-color: var(--white-color);
+    transition: width 0.3s ease;
+  }
+
+  .nav__link:hover::after {
     width: 100%;
-    text-align: center;
-    flex-direction: column;
-    z-index: 1000;
-    transform: translateY(-50px);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
 }
 
-.mobile-menu.active {
+/*=============== SMALL DEVICES ===============*/
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+  .nav__link {
+    padding-inline: 1rem;
+  }
+}
+/*=============== DOWNLOAD SECTION ===============*/
+.download-section {
     display: flex;
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.mobile-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 20px;
+    background: none;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 16px rgb(255 255 255 / 10%);
+    margin-top:35px;
+    background-color:#f1f0f0;
+  }
+  
+  .left-side {
+    max-width: 500px;
+    margin-bottom: 30px;
+  }
+  
+  .right-side {
+    max-width: 400px;
+    margin-left: 40px;
+  }
+  
+  h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+  }
+  
+  .store-buttons {
     display: flex;
     flex-direction: column;
-}
-
-.mobile-menu ul li {
-    padding: 15px;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .store-btn {
+    padding: 10px 30px;
     text-align: center;
-    padding: 15px;
-    border-bottom: 1px solid #ddd;
-}
-
-.mobile-menu ul li a {
-    color: #cf9a38;
+    border-radius: 30px;
     text-decoration: none;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
+    color: white;
+    font-weight: bold;
+    width: 300px;
+    transition: background-color 0.3s;
+  }
+  
+  .store-btn.android {
+    background-color: #cf9138;
+  }
+  
+  .store-btn.ios {
+    background-color: #6a106a;
+  }
+  
+  .store-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .qr-code img {
+    width: 150px;
+    height: auto;
+  }
+  
 
-.mobile-menu ul li a:hover {
-    color: #f4a261; 
-}
-
-
-
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    .mobile-menu.active {
-        display: flex;
-    }
-    .mobile-menu{
-        margin-top:-20px;
-        
-    }
-}
-
-main {
+  .phone-screen {
+    width: 90%;
+    height: 90%;
+    background: #f2f2f2;
+    margin: 5% auto;
+    border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.container {
-    background: linear-gradient(350deg, #cf9a38, #6a106a);
-    border-radius: 15px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 40px;
-    text-align: center;
-    max-width: 700px;
+    overflow: hidden;  
+  }
+  
+  .phone-image {
     width: 100%;
-}
-
-.container h1 {
-    font-family: 'Montserrat', sans-serif;
-    color: black;
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-
-p {
-    color: black;
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.app-image {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 20px;
-}
-
-.qr-container {
-    margin-bottom: 30px;
-}
-
-.qr-code {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
-}
-
-.download-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-.app-links {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.app-links img {
-    width: 150px;
-    transition: transform 0.3s ease;
-}
-
-.app-links img:hover {
-    transform: scale(1.1);
-}
-
-@media screen and (max-width:780px){
-    .container {
-        padding: 20px;
-        width: 90%;
-        max-width: 400px;
+    height: 100%;
+    object-fit: cover;  
+  }
+  @media screen and (max-width: 480px) {
+    .download-section {
+      padding: 40px 15px;
+      flex-direction: column;
     }
-
-    .container h1 {
-        font-size: 24px;
+  
+    .left-side,
+    .right-side {
+      max-width: 100%;
+      margin-left: 0;
     }
-
-    p {
-        font-size: 16px;
+  
+    .store-buttons {
+      gap: 10px;
     }
-
-    .qr-code {
-        width: 100px;
-        height: 100px;
+  
+    .store-btn {
+      width: 80%;
     }
-
-    .app-links img {
-        width: 120px;
-    }
-    
-
-}
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 20px;
-        max-width: 350px;
-    }
-
-    .container h1 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    .app-links img {
-        width: 120px;
-    }
-}
-
-
+  }
