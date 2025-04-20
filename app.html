@@ -1,84 +1,97 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Télécharger l'Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>AjiNkriw</title>
     <link rel="stylesheet" href="app.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts link -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="google-site-verification" content="IG1_xc_C2idNkMg1kb9zCeJ6cSwKFK8KgsC3uelG2qw" />
+    <!-- Lien vers Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Lien vers Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <img src="logo-ajinkriw-removebg-preview.png" alt="Logo">
+<body > 
+    <!--=============== HEADER ===============-->
+<header class="header">
+    <nav class="nav container">
+      <div class="nav__data">
+        <img src="logo-ajinkriw-removebg-preview.png" class="nav__logo" alt="Logo" />
+  
+        <div class="nav__toggle" id="nav-toggle" role="button" aria-label="Toggle menu">
+          <i class="ri-menu-line nav__burger"></i>
+          <i class="ri-close-line nav__close"></i>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html" >Accueil</a></li>
-            <li><a href="About.html" >À propos</a></li>
-            <li><a href="Contact.html" >Contact</a></li>
-            <li><a href="app.html" class="active">Télécharger l'application</a></li>
+      </div>
+  
+      <!--=============== NAV MENU ===============-->
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="Contact.html" class="nav__link">Contactez-nous</a></li>
+          <li><a href="About.html" class="nav__link">À propos de nous</a></li>
+          <li><a href="app.html" class="nav__link">Télécharger l'app</a></li>
         </ul>
-        <div class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-    <div class="mobile-menu">
-        <ul class="nav-links">
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="About.html">À propos</a></li>
-            <li><a href="Contact.html">Contact</a></li>
-            <li><a href="app.html">Télécharger l'application</a></li>
-        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <!--=============== MAIN JS ===============-->
+  <script>
+    /*=============== SHOW MENU ===============*/
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+            nav = document.getElementById(navId);
+  
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("show-menu");
+          toggle.classList.toggle("show-icon");
+        });
+      }
+    };
+  
+    showMenu("nav-toggle", "nav-menu");
+  </script>
+  
+  <!--=============== REMIX ICONS ===============-->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  
+  <section class="download-section">
+    <div class="left-side">
+      <div class="phone">
+        <div class="phone-screen">
+            <img src="snapedit_1745169453658.png" alt="App Image" class="phone-image">
+          </div>
+          
+      </div>
     </div>
-    <script>
-        const burger = document.querySelector('.burger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-      
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-        });
-    
-        
-        const navLinks = document.querySelectorAll('.nav-links a');
-    
-
-        const currentURL = window.location.href;
-    
-       
-        navLinks.forEach(link => {
-            if (link.href === currentURL) {
-                link.classList.add('active');
-            }
-    
-            
-            link.addEventListener('click', () => {
-                navLinks.forEach(link => link.classList.remove('active')); 
-                link.classList.add('active'); 
-            });
-        });
-    </script>
-    <main>
-        <div class="container">
-            <h1>Obtenez Notre Application</h1>
-            <p>"Scannez le code QR ou téléchargez notre application pour trouver votre logement étudiant idéal."</p>
-            <div class="qr-container">
-                <img src="QRpedia_code_for_QR_code.png" alt="QR Code" class="qr-code">
-                <p>Scannez pour télécharger</p>
-            </div>
-            <div class="app-links">
-                <a href="https://apps.apple.com/" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="Télécharger sur l'App Store" class="app-button">
-                </a>
-                <a href="https://play.google.com/store" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Obtenir sur Google Play" class="app-button">
-                </a>
-            </div>
-        </div>
-    </main>
+    <div class="right-side">
+      <h2>Telecharger Apllication</h2>
+      <div class="store-buttons">
+        <a href="#" class="store-btn android">Disponible sur Android</a>
+        <a href="#" class="store-btn ios">Disponible sur iOS</a>
+      </div>
+      <div class="qr-code">
+        <img src="QRpedia_code_for_QR_code.png" alt="QR Code">
+      </div>
+    </div>
+  </section>
 
 </body>
 </html>
